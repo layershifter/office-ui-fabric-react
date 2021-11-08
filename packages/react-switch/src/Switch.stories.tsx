@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { makeStyles } from '@fluentui/react-make-styles';
+import { shorthands, makeStyles } from '@fluentui/react-make-styles';
 // https://github.com/microsoft/fluentui/pull/18695#issuecomment-868432982
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   root: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '10px',
+    ...shorthands.gap('10px'),
   },
 });
 
@@ -30,34 +30,34 @@ const useIosStyles = makeStyles({
 
     ':hover .fui-Switch-thumb': {
       ':before': {
-        background: 'white',
+        backgroundColor: 'white',
       },
     },
 
     ':active .fui-Switch-thumb': {
       ':before': {
-        background: 'white',
+        backgroundColor: 'white',
       },
     },
 
     ':hover .fui-Switch-track': {
       // Unchecked
       ':before': {
-        borderColor: 'none',
+        ...shorthands.borderColor('none'),
       },
 
       // Checked
       ':after': {
-        background: '#4cd964',
+        backgroundColor: '#4cd964',
       },
     },
 
     ':active .fui-Switch-track': {
       ':before': {
-        borderColor: 'none',
+        ...shorthands.borderColor('none'),
       },
       ':after': {
-        background: '#4cd964',
+        backgroundColor: '#4cd964',
       },
     },
   },
@@ -76,22 +76,22 @@ const useIosStyles = makeStyles({
     `,
     ':before': {
       opacity: 1,
-      background: 'white',
+      backgroundColor: 'white',
     },
     ':after': {
       opacity: 1,
-      background: 'white',
+      backgroundColor: 'white',
     },
   },
 
   track: {
     ':after': {
-      background: '#4cd964',
-      border: 'none',
+      backgroundColor: '#4cd964',
+      ...shorthands.border('none'),
     },
     ':before': {
-      background: 'white',
-      border: '1px solid #e0e0e0',
+      backgroundColor: 'white',
+      ...shorthands.border('1px', 'solid', '#e0e0e0'),
     },
   },
 });
@@ -103,36 +103,36 @@ const useMaterialStyles = makeStyles({
 
     ':hover .fui-Switch-thumb': {
       ':before': {
-        background: 'white',
+        backgroundColor: 'white',
       },
       ':after': {
-        background: '#f50057',
+        backgroundColor: '#f50057',
       },
     },
 
     ':hover .fui-Switch-track': {
       ':before': {
-        background: '#9f9f9f',
+        backgroundColor: '#9f9f9f',
       },
       ':after': {
-        background: '#fa80ab',
-        border: 'none',
+        backgroundColor: '#fa80ab',
+        ...shorthands.border('none'),
       },
     },
 
     ':active .fui-Switch-track': {
       ':before': {
-        background: '#9f9f9f',
+        backgroundColor: '#9f9f9f',
       },
       ':after': {
-        background: '#fa80ab',
-        border: 'none',
+        backgroundColor: '#fa80ab',
+        ...shorthands.border('none'),
       },
     },
   },
 
   thumbWrapper: {
-    transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
+    // transition: 'transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms',
     left: 'calc(20px * .4)',
     right: 'calc(20px * .4)',
   },
@@ -142,21 +142,21 @@ const useMaterialStyles = makeStyles({
     height: '20px',
     boxShadow: '0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%)',
     ':before': {
-      background: 'white',
+      backgroundColor: 'white',
     },
     ':after': {
-      background: '#f50057',
+      backgroundColor: '#f50057',
     },
   },
 
   track: {
     ':before': {
-      background: '#9f9f9f',
-      border: 'none',
+      backgroundColor: '#9f9f9f',
+      ...shorthands.border('none'),
     },
     ':after': {
-      background: '#fa80ab',
-      border: 'none',
+      backgroundColor: '#fa80ab',
+      ...shorthands.border('none'),
     },
   },
 });
