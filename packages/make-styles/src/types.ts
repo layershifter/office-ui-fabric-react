@@ -57,12 +57,10 @@ type MakeStylesCSSProperties = Omit<
 export type MakeStylesStrictCSSObject = MakeStylesCSSProperties &
   MakeStylesCSSPseudos & { animationName?: MakeStylesAnimation | MakeStylesAnimation[] | CSS.AnimationProperty };
 
-  animationName?: object | string;
-}
-
 type MakeStylesCSSObjectCustom = {
   [Property: string]: MakeStylesStyle | string | 0;
 } & MakeStylesStrictCSSObject;
+
 type MakeStylesCSSPseudos = {
   [Property in CSS.Pseudos]?:
     | (MakeStylesStrictCSSObject & { content?: string })
